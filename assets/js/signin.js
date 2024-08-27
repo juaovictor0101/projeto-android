@@ -1,3 +1,4 @@
+//selecionando classe fa-eye para verificação atribuição a variavel btn e adcionando um evento de click, que ao clicar nele e verificar se o tipo dele é tipo password, se for, mudar para o tipo text, e vice versa
 let btn = document.querySelector('.fa-eye')
 
 btn.addEventListener('click', ()=>{
@@ -25,6 +26,8 @@ function entrar(){
     user: '',
     senha: ''
   }
+  
+  //função que faz a verificação se os dados informados são os mesmo que foram cadastrado. caso tenham sido informados dados corretamente o usuário tem acesso ao conteudo.
   
   listaUser = JSON.parse(localStorage.getItem('listaUser'))
   

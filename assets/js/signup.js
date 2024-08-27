@@ -1,3 +1,4 @@
+//setando e organizando todas as variáveis que serão usadas no código
 let btn = document.querySelector('#verSenha')
 let btnConfirm = document.querySelector('#verConfirmSenha')
 
@@ -21,6 +22,12 @@ let validConfirmSenha = false
 let msgError = document.querySelector('#msgError')
 let msgSuccess = document.querySelector('#msgSuccess')
 
+//verificação que inicia no momento que o usuário clica fora do campo de input, fazendo assim uma verificação se os dados foram informados corretamente. Caso tenha sido infomado algo errado, uma mensagem com o erro cometido aparece na tela. 
+
+//Essa verificação é especifica para o campo nome
+
+//verificação da variavel que inicialmente foi declarada como falso, porque o campo não foi preenchido,  nessa validação é verificado se a mesma foi preenchida corretamente, caso tenha sido, a mesma é mudada para true 
+
 nome.addEventListener('keyup', () => {
   if(nome.value.length <= 2){
     labelNome.setAttribute('style', 'color: red')
@@ -34,6 +41,10 @@ nome.addEventListener('keyup', () => {
     validNome = true
   }
 })
+
+//Essa verificação é especifica para o campo nome
+
+//verificação da variavel que inicialmente foi declarada como falso, porque o campo não foi preenchido,  nessa validação é verificado se a mesma foi preenchida corretamente, caso tenha sido, a mesma é mudada para true 
 
 usuario.addEventListener('keyup', () => {
   if(usuario.value.length <= 4){
@@ -49,6 +60,10 @@ usuario.addEventListener('keyup', () => {
   }
 })
 
+//Essa verificação é especifica para o campo senha
+
+//verificação da variavel que inicialmente foi declarada como falso, porque o campo não foi preenchido,  nessa validação é verificado se a mesma foi preenchida corretamente, caso tenha sido, a mesma é mudada para true 
+
 senha.addEventListener('keyup', () => {
   if(senha.value.length <= 5){
     labelSenha.setAttribute('style', 'color: red')
@@ -63,6 +78,10 @@ senha.addEventListener('keyup', () => {
   }
 })
 
+//Essa verificação é especifica para o campo confirmação de senha, onde confirma se os dados informado nesse campo são iguais ao campo "senha"
+
+//verificação da variavel que inicialmente foi declarada como falso, porque o campo não foi preenchido,  nessa validação é verificado se a mesma foi preenchida corretamente, caso tenha sido, a mesma é mudada para true 
+
 confirmSenha.addEventListener('keyup', () => {
   if(senha.value != confirmSenha.value){
     labelConfirmSenha.setAttribute('style', 'color: red')
@@ -76,6 +95,11 @@ confirmSenha.addEventListener('keyup', () => {
     validConfirmSenha = true
   }
 })
+
+//verifica se todos os dados foram preenchidos corretamente de acordo com cada evento/função acima, caso tenha sido informa uma mensagem na tela de "Cadastro realizado com sucedo" e o usuário é encaminhado para a pagina de login, para acessar o conteudo, caso não, é informado uma mensagem que é "preciso preencher todos os dados corretamente"
+
+//essa função também usa local storage como um tipo de "banco de dados" para guardar as informações de login usadas no cadastro e assim verificar se as mesmsas coincidem, caso coincidam, o login é realizado com sucesso, caso não, é informado uma mensagem de erro no login ou senha
+
 
 function cadastrar(){
   if(validNome && validUsuario && validSenha && validConfirmSenha){
@@ -109,6 +133,7 @@ function cadastrar(){
     msgSuccess.setAttribute('style', 'display: none')
   }
 }
+////para verificação atribuição a variavel btn e adcionando um evento de click, que ao clicar nele e verificar se o tipo dele é tipo password, se for, mudar para o tipo text, e vice versa
 
 btn.addEventListener('click', ()=>{
   let inputSenha = document.querySelector('#senha')
@@ -119,6 +144,8 @@ btn.addEventListener('click', ()=>{
     inputSenha.setAttribute('type', 'password')
   }
 })
+
+//para verificação atribuição a variavel btn e adcionando um evento de click, que ao clicar nele e verificar se o tipo dele é tipo password, se for, mudar para o tipo text, e vice versa
 
 btnConfirm.addEventListener('click', ()=>{
   let inputConfirmSenha = document.querySelector('#confirmSenha')
